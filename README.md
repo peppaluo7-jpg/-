@@ -1,4 +1,3 @@
-[README.md](https://github.com/user-attachments/files/34220859/README.md)
 # -# 跨语言关系沟通 Agent
 
 生成表达现在通过一次模型调用完成意图、关系、文化画像、候选表达与风险自检；页面仍将这些结果分开展示，供用户核对。风险自检与生成来自同一次调用，并非独立模型复核。
