@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>Cross Language</title><script src="github-pages-demo.js"></script>
+<style>.confidence{display:none!important}.sentence-editor{max-height:calc(100vh - 16px);overflow:auto}.sentence-editor .revised-sentence{max-height:120px;resize:vertical}.phrase{display:inline;border:0;background:transparent;color:var(--blue);text-decoration:underline;text-decoration-style:dotted;cursor:pointer;padding:1px 2px}.phrase:hover{background:var(--accent);color:var(--ink)}
+:root{--bg:#f5f6f2;--paper:#fff;--ink:#171815;--muted:#696b65;--line:#d9dbd4;--accent:#d9f247;--blue:#2966d5;--soft:#eef0ea;--good:#e7f4df;--warn:#fff0d1}*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink);letter-spacing:0}button,input,select,textarea{font:inherit;letter-spacing:0}.wrap{max-width:1280px;margin:auto;padding:24px}.head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--ink);padding:4px 0 18px;margin-bottom:18px}.head h1{font-size:27px;margin:0 0 5px}.sub,.muted{color:var(--muted)}.mode{font-size:12px;border:1px solid var(--line);padding:7px 9px;background:#fff}.workflow{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--line);background:#fff;margin-bottom:18px}.flow{padding:12px;border-right:1px solid var(--line);min-height:72px}.flow:last-child{border:0}.flow small{display:block;color:var(--muted);margin-bottom:7px}.flow strong{font-size:13px}.flow.ai small{color:var(--blue)}.flow.human small{color:#597000}.layout{display:grid;grid-template-columns:minmax(320px,390px) 1fr;gap:18px}.panel{background:var(--paper);border:1px solid var(--line);padding:18px;margin-bottom:14px}.eyebrow{font-size:11px;font-weight:800;color:var(--muted);margin-bottom:12px}.section-title{font-size:19px;font-weight:800;margin-bottom:12px}.field{margin-bottom:14px}.field label{display:flex;justify-content:space-between;margin-bottom:6px;font-size:13px;font-weight:700}.field label span{font-weight:400;color:var(--muted)}select,input,textarea{width:100%;padding:10px;border:1px solid #bfc2ba;background:#fff;color:var(--ink)}textarea{height:145px;resize:vertical;line-height:1.5}.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}.hidden{display:none!important}.scenarios{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}.chip{background:#fff;color:var(--ink);border:1px solid var(--line);padding:7px 9px;font-size:12px;cursor:pointer}.button{width:100%;border:1px solid var(--ink);background:var(--ink);color:#fff;padding:11px 14px;font-weight:700;cursor:pointer}.button.primary{background:var(--accent);color:var(--ink)}.button:disabled{opacity:.45}.button.secondary{background:#fff;color:var(--ink);width:auto}.actions{display:flex;gap:8px}.actions .button{flex:1}.status{font-size:13px;color:var(--muted);margin-top:10px;min-height:18px}.progress{height:5px;background:var(--soft);margin-top:10px;overflow:hidden}.bar{height:100%;width:0;background:var(--blue)}.bar.loading{animation:loading 1.8s ease-in-out infinite}@keyframes loading{0%{width:10%}50%{width:72%}100%{width:94%}}.confirm-head{display:flex;justify-content:space-between;gap:12px;align-items:start}.confidence{font-size:11px;padding:5px 7px;background:var(--warn)}.notice{background:var(--warn);border-left:4px solid #cb8b16;padding:10px;font-size:13px;margin-bottom:14px}.range-row{display:grid;grid-template-columns:90px 1fr 20px;align-items:center;gap:8px;margin:12px 0;font-size:13px}.range-row input{padding:0}.range-row output{font-weight:700}.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:7px}.step{border:1px solid var(--line);padding:11px;min-height:118px}.step b{display:block;font-size:12px;margin-bottom:7px}.step small{color:var(--muted);line-height:1.45}.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.card{background:var(--soft);padding:11px;min-height:74px;font-size:14px}.card b{display:block;font-size:11px;margin-bottom:6px;color:var(--muted)}.versions{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.version{border:1px solid var(--line);padding:13px;cursor:pointer;min-height:190px;position:relative}.version.active{border:2px solid var(--ink);padding:12px}.version.active:after{content:"已选择";position:absolute;right:9px;top:9px;font-size:10px;background:var(--accent);padding:4px}.version p{line-height:1.55;font-size:14px}.pass{background:var(--good);border-left:4px solid #58923c;padding:11px}.flag{background:var(--warn);border-left:4px solid #cb8b16;padding:10px;margin-top:8px;font-size:13px}@media(max-width:950px){.layout{grid-template-columns:1fr}.workflow,.steps{grid-template-columns:1fr}.flow{border-right:0;border-bottom:1px solid var(--line);min-height:auto}.versions,.cards{grid-template-columns:1fr}}@media(max-width:520px){.wrap{padding:14px}.mode{display:none}.two{grid-template-columns:1fr}}
+</style>
+<style id="ui-redesign-v3">
+:root{
+  --bg:#f6f7f9;
+  --paper:#ffffff;
+  --ink:#111827;
+  --muted:#667085;
+  --line:#e4e7ec;
+  --line-strong:#d0d5dd;
+  --accent:#4f46e5;
+  --accent-strong:#4338ca;
+  --accent-soft:#eef2ff;
+  --blue:#4f46e5;
+  --soft:#f8fafc;
+  --good:#ecfdf3;
+  --good-line:#abefc6;
+  --warn:#fffaeb;
+  --warn-line:#fedf89;
+  --danger:#b42318;
+  --shadow:0 1px 2px rgba(16,24,40,.04),0 8px 24px rgba(16,24,40,.05);
+}
+*{box-sizing:border-box}
+html{background:var(--bg)}
+body{
+  margin:0;
+  min-height:100vh;
+  background:
+    radial-gradient(circle at 0% 0%,rgba(79,70,229,.035),transparent 34%),
+    var(--bg);
+  color:var(--ink);
+  font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+button,input,select,textarea{font:inherit;color:inherit}
+button{transition:background .18s ease,border-color .18s ease,color .18s ease,transform .12s ease,box-shadow .18s ease}
+button:active:not(:disabled){transform:translateY(1px)}
+.wrap{max-width:1480px;margin:0 auto;padding:28px 32px 44px}
+.head{
+  display:flex;align-items:flex-start;justify-content:space-between;gap:24px;
+  padding:2px 2px 24px;margin-bottom:24px;border-bottom:1px solid var(--line);
+}
+.head:after{content:"AI Communication Workspace";font-size:12px;line-height:28px;color:var(--muted);border:1px solid var(--line);background:rgba(255,255,255,.72);padding:0 10px;border-radius:8px;white-space:nowrap}
+.head h1{font-size:28px;line-height:1.2;letter-spacing:-.025em;margin:0 0 8px;font-weight:720}
+.sub{font-size:14px;line-height:1.6;max-width:700px;color:var(--muted)}
+.layout{display:grid;grid-template-columns:minmax(400px,480px) minmax(0,1fr);gap:24px;align-items:start}
+aside{position:sticky;top:20px;align-self:start;max-height:calc(100vh - 40px);overflow:auto;padding-right:3px;scrollbar-width:thin;scrollbar-color:#d0d5dd transparent}
+main{min-width:0}
+.panel{
+  position:relative;background:rgba(255,255,255,.94);border:1px solid var(--line);
+  border-radius:14px;padding:22px;margin-bottom:16px;box-shadow:var(--shadow);
+}
+aside .panel{box-shadow:0 1px 2px rgba(16,24,40,.035)}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:7px;margin:0 0 11px;
+  color:var(--accent);font-size:11px;line-height:1;font-weight:750;letter-spacing:.06em;text-transform:uppercase;
+}
+.eyebrow:before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor;box-shadow:0 0 0 3px var(--accent-soft)}
+.section-title{font-size:19px;line-height:1.35;font-weight:700;letter-spacing:-.018em;margin:0 0 16px}
+.field{margin-bottom:16px}
+.field label{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:7px;font-size:13px;line-height:1.4;font-weight:650;color:#344054}
+.field label span{font-size:12px;font-weight:450;color:#98a2b3}
+select,input:not([type="range"]),textarea{
+  width:100%;border:1px solid var(--line-strong);background:#fff;border-radius:9px;
+  padding:11px 12px;outline:none;box-shadow:0 1px 2px rgba(16,24,40,.02);
+  transition:border-color .18s ease,box-shadow .18s ease,background .18s ease;
+}
+select:hover,input:not([type="range"]):hover,textarea:hover{border-color:#b8bec8}
+select:focus,input:not([type="range"]):focus,textarea:focus{border-color:#8b85f0;box-shadow:0 0 0 3px rgba(79,70,229,.10)}
+textarea{min-height:142px;resize:vertical;line-height:1.6}
+#finalBody{min-height:72px;font-size:15px;line-height:1.7;background:#fcfcfd}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.notice{
+  margin:0 0 16px;padding:11px 12px;border:1px solid var(--warn-line);border-left:3px solid #f79009;
+  border-radius:9px;background:var(--warn);color:#7a2e0e;font-size:12.5px;line-height:1.55;
+}
+.button{
+  min-height:42px;width:100%;border:1px solid transparent;border-radius:9px;padding:10px 14px;
+  background:var(--accent);color:#fff;font-weight:650;font-size:13px;cursor:pointer;
+  box-shadow:0 1px 2px rgba(16,24,40,.06);
+}
+.button:hover:not(:disabled){background:var(--accent-strong);box-shadow:0 2px 5px rgba(79,70,229,.18)}
+.button.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+.button.secondary{width:auto;background:#fff;color:#344054;border-color:var(--line-strong);box-shadow:0 1px 2px rgba(16,24,40,.03)}
+.button.secondary:hover:not(:disabled){background:#f9fafb;border-color:#b8bec8;color:#101828;box-shadow:0 1px 2px rgba(16,24,40,.04)}
+.button:disabled{opacity:.48;cursor:not-allowed;transform:none}
+.actions{display:flex;gap:10px;align-items:center}.actions .button{flex:1}
+.status{min-height:18px;margin-top:10px;color:var(--muted);font-size:12.5px;line-height:1.45}
+.progress{height:7px;margin-top:12px;border-radius:999px;background:#eef0f4;overflow:hidden;border:1px solid #e9ebef}
+.bar{height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,#6366f1,#4f46e5)}
+.bar.loading{animation:loadingNew 1.45s cubic-bezier(.4,0,.2,1) infinite}
+@keyframes loadingNew{0%{width:8%;transform:translateX(-10%)}50%{width:62%;transform:translateX(25%)}100%{width:28%;transform:translateX(255%)}}
+.confirm-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.range-row{
+  display:grid;grid-template-columns:106px minmax(0,1fr) 30px;align-items:center;gap:12px;
+  margin:13px 0;padding:2px 0;font-size:12.5px;color:#475467;
+}
+.range-row output{justify-self:end;display:grid;place-items:center;width:26px;height:24px;border:1px solid var(--line);border-radius:6px;background:#f9fafb;color:#344054;font-weight:700;font-size:11px}
+input[type="range"]{-webkit-appearance:none;appearance:none;width:100%;height:18px;padding:0;border:0;background:transparent;cursor:pointer}
+input[type="range"]::-webkit-slider-runnable-track{height:4px;border-radius:999px;background:#e4e7ec}
+input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:#fff;border:4px solid var(--accent);margin-top:-6px;box-shadow:0 1px 2px rgba(16,24,40,.12)}
+input[type="range"]::-moz-range-track{height:4px;border-radius:999px;background:#e4e7ec}
+input[type="range"]::-moz-range-thumb{width:10px;height:10px;border-radius:50%;background:#fff;border:4px solid var(--accent);box-shadow:0 1px 2px rgba(16,24,40,.12)}
+#cultureSec{padding-bottom:20px}
+#cultureControls{display:grid;grid-template-columns:1fr 1fr;gap:0 22px;margin:4px 0 14px}
+#cultureControls .range-row{grid-template-columns:88px minmax(0,1fr) 30px;margin:9px 0}
+#emptySec{min-height:240px;display:flex;flex-direction:column;justify-content:center;padding:36px 38px;background:linear-gradient(180deg,#fff,#fcfcfd)}
+#emptySec:before{content:"✦";display:grid;place-items:center;width:42px;height:42px;margin-bottom:18px;border-radius:10px;background:var(--accent-soft);color:var(--accent);font-size:18px}
+#emptySec .section-title{font-size:22px;margin-bottom:8px}
+#emptySec p{max-width:620px;margin:0;line-height:1.65}
+.versions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;align-items:stretch;margin-top:2px}
+.version{
+  position:relative;min-height:210px;border:1px solid var(--line);border-radius:12px;padding:16px;background:#fff;
+  cursor:pointer;overflow:hidden;transition:border-color .18s ease,box-shadow .18s ease,transform .18s ease,background .18s ease;
+}
+.version:before{content:"";position:absolute;inset:0 auto 0 0;width:3px;background:#d0d5dd}
+.version[data-k="direct"]:before{background:#4f46e5}
+.version[data-k="polite"]:before{background:#7c3aed}
+.version[data-k="concise"]:before{background:#64748b}
+.version:hover{transform:translateY(-2px);border-color:#c7c9d1;box-shadow:0 8px 18px rgba(16,24,40,.065)}
+.version.active{padding:16px;border:1px solid #9b96f4;background:#fafaff;box-shadow:0 0 0 3px rgba(79,70,229,.08)}
+.version.active:after{display:none}
+.version b{display:inline-flex;align-items:center;margin:0 0 14px;padding:5px 8px;border-radius:6px;background:#f2f4f7;color:#344054;font-size:11px;line-height:1;font-weight:700}
+.version p{margin:0;color:#344054;font-size:14px;line-height:1.7}
+.versions.choice-locked{grid-template-columns:1fr}
+.versions.choice-locked .version{display:none;min-height:auto}
+.versions.choice-locked .version.active{display:block;padding:20px 20px 18px;background:#fff;border-color:#c7c4ff;box-shadow:0 0 0 3px rgba(79,70,229,.07)}
+.versions.choice-locked .version.active:after{display:block;content:"Selected";position:absolute;right:14px;top:14px;padding:5px 8px;border-radius:6px;background:var(--accent-soft);color:var(--accent);font-size:10px;font-weight:750;letter-spacing:.04em}
+.version-toolbar{display:flex;justify-content:flex-end;margin:10px 0 2px}
+.version-toolbar .button{width:auto;min-height:34px;padding:7px 10px;font-size:12px}
+#versionSec .field{margin-top:18px!important;padding-top:18px;border-top:1px solid var(--line)}
+.pass{padding:13px 14px;border:1px solid var(--good-line);border-left:3px solid #12b76a;border-radius:9px;background:var(--good);color:#05603a;line-height:1.55}
+.flag{margin-top:9px;padding:12px 13px;border:1px solid var(--warn-line);border-left:3px solid #f79009;border-radius:9px;background:var(--warn);font-size:12.5px;line-height:1.55;color:#7a2e0e}
+#mailSec .button.secondary#openQQ{width:100%;margin-top:10px}
+.phrase,.sentence{color:var(--accent)!important;text-decoration-color:#b9b5f7!important;text-underline-offset:3px;border-radius:4px!important}
+.phrase:hover,.sentence:hover{background:var(--accent-soft)!important;color:var(--accent-strong)!important}
+.sentence-editor{border:1px solid var(--line)!important;border-radius:12px!important;box-shadow:0 18px 45px rgba(16,24,40,.16)!important;padding:16px!important;background:#fff!important}
+.sentence-editor textarea{border-radius:8px!important;border-color:var(--line-strong)!important}
+.hidden{display:none!important}
+@media(max-width:1120px){
+  .wrap{padding:22px}.layout{grid-template-columns:minmax(340px,410px) minmax(0,1fr);gap:18px}
+  #cultureControls{grid-template-columns:1fr}.versions{grid-template-columns:1fr}
+}
+@media(max-width:900px){
+  .wrap{padding:18px}.head{padding-bottom:18px;margin-bottom:18px}.head:after{display:none}
+  .layout{grid-template-columns:1fr}.layout aside{position:static;max-height:none;overflow:visible;padding-right:0}
+  .versions{grid-template-columns:1fr}.panel{border-radius:12px}
+}
+@media(max-width:560px){
+  .wrap{padding:12px}.head h1{font-size:23px}.sub{font-size:13px}.panel{padding:17px}
+  .two{grid-template-columns:1fr}.range-row{grid-template-columns:92px minmax(0,1fr) 28px}
+  #cultureControls .range-row{grid-template-columns:82px minmax(0,1fr) 28px}
+  .actions{flex-direction:column}.actions .button,.button.secondary{width:100%}
+}
+</style>
+<style id="ui-refinement-v4">
+/* v4 — compact cultural controls + word-level refinement */
+#cultureSec{padding:18px 20px}
+.culture-compact-head{display:flex;justify-content:space-between;gap:18px;align-items:flex-start}
+.culture-compact-head .section-title{margin-bottom:5px}
+.culture-helper{font-size:12.5px;line-height:1.55;color:var(--muted);max-width:600px}
+.culture-toggle{flex:0 0 auto;border:1px solid var(--line-strong);background:#fff;color:#344054;border-radius:8px;padding:8px 11px;font-size:12px;font-weight:650;cursor:pointer}
+.culture-toggle:hover{background:#f9fafb;border-color:#b8bec8}
+.culture-summary{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+.culture-chip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:#fbfcfd;border-radius:7px;padding:6px 8px;font-size:11.5px;line-height:1;color:#475467}
+.culture-chip b{font-weight:650;color:#344054}.culture-chip em{font-style:normal;color:var(--accent);font-weight:650}
+.culture-detail{margin-top:15px;padding-top:14px;border-top:1px solid var(--line)}
+.culture-scale-guide{display:flex;justify-content:space-between;gap:12px;margin:0 0 8px;color:#98a2b3;font-size:10.5px}
+#cultureControls{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:4px 18px!important;margin:0!important}
+#cultureControls .culture-range{min-width:0;padding:8px 0;border-bottom:1px solid #f1f2f4}
+#cultureControls .culture-range-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:6px}
+#cultureControls .culture-range-title{font-size:12px;font-weight:650;color:#344054}
+#cultureControls .culture-range-reading{font-size:11px;color:var(--accent);font-weight:650;white-space:nowrap}
+#cultureControls .culture-range-line{display:grid;grid-template-columns:minmax(0,1fr) 24px;gap:8px;align-items:center}
+#cultureControls input[type="range"]{width:100%;height:4px;padding:0;margin:0;background:#eaecf0;border:0;border-radius:999px;appearance:none;-webkit-appearance:none}
+#cultureControls input[type="range"]::-webkit-slider-thumb{appearance:none;-webkit-appearance:none;width:14px;height:14px;border-radius:50%;background:#fff;border:2px solid var(--accent);box-shadow:0 1px 2px rgba(16,24,40,.12);cursor:pointer}
+#cultureControls input[type="range"]::-moz-range-thumb{width:11px;height:11px;border-radius:50%;background:#fff;border:2px solid var(--accent);box-shadow:0 1px 2px rgba(16,24,40,.12);cursor:pointer}
+#cultureControls output{display:grid;place-items:center;width:24px;height:22px;border:1px solid var(--line);border-radius:5px;background:#fff;color:#475467;font-size:10.5px;font-weight:700}
+.culture-actions{display:flex;align-items:center;gap:12px;margin-top:12px}.culture-actions .button{width:auto;min-height:36px;padding:8px 11px}.culture-actions .status{margin:0}
+
+/* Selected result becomes a readable editing surface. */
+.versions.choice-locked .version.active p{font-size:16px;line-height:1.95;color:#101828;padding:8px 4px}
+.word-token{display:inline;border:0;background:transparent;color:inherit;font:inherit;line-height:inherit;padding:1px 2px;margin:0;border-radius:3px;cursor:text;text-decoration:none}
+.word-token:hover{background:#eef2ff;color:#3448c5}
+.word-token.is-open{background:#dbe7ff;color:#155eef;box-shadow:inset 0 -2px 0 #155eef}
+.word-editor{position:fixed;z-index:9999;width:min(560px,calc(100vw - 24px));max-height:min(620px,calc(100vh - 24px));overflow:auto;background:#fff;border:1px solid #2f3135;border-radius:14px;box-shadow:0 18px 52px rgba(16,24,40,.26);padding:0}
+.word-editor-topbar{display:flex;align-items:center;justify-content:space-between;gap:14px;background:#20211f;color:#fff;padding:12px 16px;border-radius:13px 13px 0 0}
+.word-editor-brand{display:flex;align-items:center;gap:8px;min-width:0}.word-editor-spark{color:#f6c74a;font-size:17px}.word-editor-brand strong{font-size:13.5px;font-weight:750}.word-editor-brand span{font-size:12px;color:#d6d7d3}
+.word-editor-window-actions{display:flex;align-items:center;gap:4px}.word-editor-collapse,.word-editor-close{display:grid;place-items:center;width:26px;height:26px;border:0;border-radius:5px;background:transparent;color:#fff;line-height:1;cursor:pointer;opacity:.86}.word-editor-collapse{font-size:18px}.word-editor-close{font-size:22px}.word-editor-collapse:hover,.word-editor-close:hover{background:#ffffff18;opacity:1}
+.word-editor.is-collapsed{max-height:none!important;overflow:hidden}.word-editor.is-collapsed>.word-editor-topbar{border-radius:13px}.word-editor.is-collapsed>:not(.word-editor-topbar){display:none!important}.word-editor.is-collapsed .word-editor-collapse{font-size:0}.word-editor.is-collapsed .word-editor-collapse:after{content:'+';font-size:18px}
+.word-suggestion{padding:18px 18px 16px;background:#fff}
+.word-suggestion-kicker{font-size:12px;color:#98a2b3;margin-bottom:10px;font-weight:650}
+.word-suggestion-preview{font-size:18px;line-height:1.62;color:#1f2937;letter-spacing:-.01em;word-break:break-word}
+.word-suggestion-preview .old-word{color:#d92d20;text-decoration:line-through;text-decoration-thickness:2px;margin:0 3px}
+.word-suggestion-preview .new-word{color:#5b78e5;font-weight:750;margin:0 3px}
+.word-suggestion-preview .context-fade{color:#667085}
+.word-suggestion-actions{display:flex;align-items:center;gap:10px;padding:0 18px 16px}
+.word-action{border:1px solid #d0d5dd;background:#fff;color:#475467;border-radius:8px;padding:9px 14px;font-size:12px;font-weight:700;cursor:pointer}.word-action:hover{background:#f9fafb}
+.word-action.primary{border-color:#5b57e8;background:#5b57e8;color:#fff}.word-action.primary:hover{background:#4f46d8}
+.word-editor-loading{padding:18px;color:#667085;font-size:13px}
+.word-alternatives{border-top:1px solid #eaecf0;padding:12px 18px 14px;background:#fcfcfd}
+.word-alternatives-head{display:flex;align-items:center;justify-content:space-between;font-size:11px;color:#98a2b3;margin-bottom:8px}
+.word-alternative-list{display:flex;flex-wrap:wrap;gap:7px}
+.word-alt{border:1px solid #d0d5dd;background:#fff;color:#344054;border-radius:999px;padding:6px 9px;font-size:11.5px;cursor:pointer}.word-alt:hover{border-color:#a9a5ff;color:#4f46e5;background:#f8f7ff}
+.word-custom{border-top:1px solid #eaecf0;padding:12px 18px 14px;background:#fff}.word-custom summary{cursor:pointer;font-size:12px;font-weight:700;color:#475467;list-style:none}.word-custom summary::-webkit-details-marker{display:none}.word-custom summary:after{content:'＋';float:right;color:#98a2b3}
+.word-custom[open] summary:after{content:'−'}
+.word-custom-row{display:flex;gap:8px;margin-top:10px}.word-custom input{min-width:0;padding:9px 10px;border-radius:7px;font-size:12px}.word-custom button{width:auto;min-height:36px;padding:8px 11px;font-size:11px}
+.word-editor-status{font-size:11px;color:var(--muted);margin-top:7px;min-height:14px}
+@media(max-width:720px){#cultureControls{grid-template-columns:1fr!important}.culture-compact-head{flex-direction:column}.culture-toggle{align-self:flex-start}.culture-scale-guide{display:none}}
+</style></head><body><div class="wrap"><header class="head"><h1>Cross Language</h1></header>
+<div class="layout"><aside><section class="panel"><div class="eyebrow">01 原始情境 · 由你提供</div><div class="section-title">你准备怎么沟通？</div><div class="field"><label>原始内容 <span>可使用中文</span></label><textarea id="message" placeholder="写下人物、发生的事情和你真正想表达的内容。AI 会先识别信息，未经确认不会开始生成。"></textarea></div><div class="field"><label>不能改变的边界 <span>可选</span></label><input id="constraint" placeholder="例如：不要过度道歉，不要新增承诺"/></div><button class="button primary" id="extract">识别关键信息</button><div class="progress hidden" id="extractProgress"><div class="bar" id="extractBar"></div></div><div class="status" id="status">第一步仅提取信息，不会生成邮件。</div></section>
+<section class="panel hidden" id="confirmSec"><div class="confirm-head"><div><div class="eyebrow">02 信息确认 · 由你决定</div><div class="section-title">核对识别结果</div></div><span class="confidence" id="confidence"></span></div><div class="notice">AI 可能识别错误。请确认或修改后再继续。</div><div class="two"><div class="field"><label>发送方姓名 <span>可选</span></label><input id="sender_name" placeholder="你的姓名"/></div><div class="field"><label>接收方姓名 <span>可选</span></label><input id="receiver_name" placeholder="对方姓名"/></div></div><div class="field"><label>沟通对象</label><select id="relation"><option value="">请选择</option><option>导师 / 教授</option><option>同事</option><option>合作对象</option><option>上级</option><option>朋友</option><option value="custom">自定义</option></select></div><div class="field hidden" id="customRelationField"><label>自定义沟通对象</label><input id="custom_relation" placeholder="例如：海外客户、课程助教"/></div><div class="field"><label>沟通目的</label><select id="purpose"><option value="">请选择</option><option>请求 / 申请</option><option>道歉</option><option>拒绝</option><option>提醒</option><option>表达不同意见</option><option>解释 / 进度说明</option><option value="custom">自定义</option></select></div><div class="field hidden" id="customPurposeField"><label>自定义沟通目的</label><input id="custom_purpose" placeholder="例如：协商新的会议时间"/></div><div class="field"><label>目标文化语境</label><select id="target_context"><option>美国英语语境</option><option>英国英语语境</option><option>中国香港英语语境</option><option>新加坡英语语境</option><option>不确定 / 通用国际英语</option></select></div><div class="eyebrow">表达尺度 · 可人工调节</div><div class="range-row"><span>直接程度</span><input id="directness" max="5" min="1" type="range" value="3"/><output>3</output></div><div class="range-row"><span>礼貌程度</span><input id="politeness" max="5" min="1" type="range" value="4"/><output>4</output></div><div class="range-row"><span>正式程度</span><input id="formality" max="5" min="1" type="range" value="4"/><output>4</output></div><div class="actions"><button class="button secondary" id="back">返回修改</button><button class="button" id="run">确认并生成</button></div><div class="progress hidden" id="generateProgress"><div class="bar" id="generateBar"></div></div><div class="status" id="generateStatus"></div></section></aside>
+<main><section class="panel" id="emptySec"><div class="eyebrow">工作区</div><div class="section-title">等待信息确认</div><p class="muted">后台将完成意图、关系、文化与边界判断，最终只展示文化画像、生成版本和检查结果。</p></section><section class="panel hidden" id="cultureSec">
+<div class="culture-compact-head">
+<div>
+<div class="eyebrow">03 文化画像 · AI 建议</div>
+<div class="section-title">文化适配参数</div>
+<div class="culture-helper">先看“偏向什么”，需要时再展开微调。1–5 不是分数，而是表达倾向。</div>
+</div>
+<button aria-expanded="false" class="culture-toggle" id="cultureToggle" type="button">调整 8 项参数</button>
+</div>
+<div class="culture-summary" id="cultureSummary"></div>
+<div class="culture-detail hidden" id="cultureDetail">
+<div class="culture-scale-guide"><span>1 = 更弱 / 更少</span><span>3 = 平衡</span><span>5 = 更强 / 更多</span></div>
+<div id="cultureControls"></div>
+<div class="culture-actions">
+<button class="button secondary" id="regenerate">应用调整并重新生成</button>
+<div class="status" id="regenerateStatus"></div>
+</div>
+</div>
+</section><section class="panel hidden" id="versionSec"><div class="eyebrow">04 表达生成 · 选择与自定义</div><div class="versions" id="versions"></div><div class="field" style="margin-top:14px"><label>最终正文 <span>可在下一页逐句、逐词调整</span></label><textarea id="finalBody" rows="2" placeholder="确认表达版本后，可在下一页编辑全文并进行局部优化。"></textarea></div><div class="status" id="editStatus">选择表达版本后，可继续修改与核对。</div></section><section class="panel hidden" id="mailSec"><div class="eyebrow">05 QQ 邮箱草稿 · 手动发送</div><div class="section-title">保存到草稿箱</div><div class="notice">系统使用邮箱授权码保存草稿，不会自动发送。保存后请进入 QQ 邮箱核对。</div><div class="two"><div class="field"><label>收件邮箱</label><input id="mailTo" placeholder="name@example.com" type="email"/></div><div class="field"><label>邮件主题</label><input id="mailSubject" placeholder="请输入邮件主题"/></div></div><div class="actions"><button class="button secondary" id="copyMail">复制完整邮件</button><button class="button" id="saveDraft">保存到 QQ 草稿箱</button></div><button class="button secondary" id="openQQ">打开 QQ 邮箱</button><div class="status" id="mailStatus"></div></section><section class="panel hidden" id="checkSec"><div class="eyebrow">06 真实性与文化适配检查</div><div id="checkBox"></div></section></main></div></div>
+<style>#openQQ{margin-top:14px}.sentence{display:inline;border:0;background:transparent;color:var(--blue);text-decoration:underline;text-decoration-style:dotted;cursor:pointer;padding:1px 2px}.sentence:hover{background:var(--accent);color:var(--ink)}.sentence-editor{position:fixed;z-index:20;background:#fff;border:1px solid #111;box-shadow:0 8px 24px #0002;padding:12px;width:min(360px,calc(100vw - 30px))}.sentence-editor textarea{height:90px;margin-bottom:8px}.sentence-editor .actions{display:flex}</style><script defer="" src="enhancements.js"></script><script>
+const $=id=>document.getElementById(id),esc=s=>String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[m]));let state={selected:"polite",cultureReady:false,candidates:{}};const show=id=>$(id)?.classList.remove("hidden"),hide=id=>$(id)?.classList.add("hidden");const loading=(kind,on,text)=>{const p=$(kind+"Progress"),b=$(kind+"Bar");p.classList.toggle("hidden",!on);b.classList.toggle("loading",on);if(text)$(kind==="extract"?"status":"generateStatus").textContent=text};const cultureLabels={directness:"直接性",mitigation:"缓和程度",apology:"道歉倾向",explanation:"解释详略",responsibility:"责任表达",commitment:"承诺强度",hierarchy:"层级意识",relational_warmth:"关系温度"};
+document.querySelectorAll('input[type="range"]').forEach(x=>x.oninput=()=>x.nextElementSibling.value=x.value);$("relation").onchange=()=>$("customRelationField").classList.toggle("hidden",$("relation").value!=="custom");$("purpose").onchange=()=>$("customPurposeField").classList.toggle("hidden",$("purpose").value!=="custom");$("back").onclick=()=>{$("message").focus();scrollTo({top:0,behavior:"smooth"})};
+$("extract").onclick=async()=>{if(!$("message").value.trim()){$("status").textContent="请先写下要沟通的内容。";return}$("extract").disabled=true;loading("extract",true,"正在识别人名、关系与沟通目的…");try{const r=await fetch("/api/extract",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:$("message").value})}),d=await r.json();if(!d.ok)throw Error(d.error);const x=d.extracted||{};$("receiver_name").value=x.receiver_name||"";$("relation").value=x.relation||"";$("purpose").value=x.purpose||"";$("confidence").textContent=({high:"较高置信度",medium:"中等置信度",low:"较低置信度"})[x.confidence]||"需要确认";show("confirmSec");$("status").textContent=x.note||"识别完成，请核对。";$("confirmSec").scrollIntoView({behavior:"smooth",block:"start"})}catch(e){$("status").textContent="识别失败："+e.message}finally{$("extract").disabled=false;loading("extract",false)}};
+$("run").onclick=()=>generate(false);$("regenerate").onclick=()=>generate(true);
+async function generate(isRevision){const relation=$("relation").value==="custom"?$("custom_relation").value.trim():$("relation").value,purpose=$("purpose").value==="custom"?$("custom_purpose").value.trim():$("purpose").value;if(!relation||!purpose){$("generateStatus").textContent="请确认沟通对象和沟通目的。";return}const overrides=isRevision?Object.fromEntries(Object.keys(cultureLabels).map(k=>[k,+$("culture_"+k).value])):(window.getContactCultureOverrides?.()||{});const payload={message:$("message").value,constraint:$("constraint").value,sender_name:$("sender_name").value.trim(),receiver_name:$("receiver_name").value,relation,purpose,target_context:$("target_context").value,style_controls:{directness:+$("directness").value,politeness:+$("politeness").value,formality:+$("formality").value},culture_overrides:overrides,is_revision:isRevision};const button=$(isRevision?"regenerate":"run"),status=$(isRevision?"regenerateStatus":"generateStatus");button.disabled=true;loading("generate",true,"正在生成表达并核对边界…");try{const r=await fetch("/api/process",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)}),d=await r.json();if(!d.ok)throw Error(d.error);render(d,!isRevision,overrides);status.textContent=d.mode==="ai"?(isRevision?"已按调整后的文化画像重新生成。":"生成完成，请选择并核对。"):("Demo 模式：AI 未完成生成，不能直接发送。")}catch(e){status.textContent="生成失败："+e.message}finally{button.disabled=false;loading("generate",false)}}
+function levelNumber(v){const raw=String(typeof v==="object"?(v.level||""):v).toLowerCase();if(/very high|strong|extensive/.test(raw))return 5;if(/high|warm|detailed/.test(raw))return 4;if(/low|concise|minimal/.test(raw))return 2;if(/none|avoid|do_not/.test(raw))return 1;return 3}
+const cultureReadings={
+ directness:["非常含蓄","偏含蓄","平衡","较直接","非常直接"],
+ mitigation:["几乎不缓和","少量缓和","适中","较多缓和","高度缓和"],
+ apology:["避免新增","较少道歉","中性","较多道歉","强道歉"],
+ explanation:["极简","简短","适中","较详细","很详细"],
+ responsibility:["不新增承担","较弱","中性","较明确","强承担"],
+ commitment:["不新增承诺","较弱","中性","较明确","强承诺"],
+ hierarchy:["弱层级","偏平等","适中","较重层级","强层级"],
+ relational_warmth:["疏离","偏克制","中性","较温暖","亲近"]
+};
+function cultureReading(k,v){return cultureReadings[k]?.[Math.max(1,Math.min(5,+v))-1]||"平衡"}
+function updateCultureSummary(){const host=$("cultureSummary");if(!host)return;host.innerHTML=Object.keys(cultureLabels).map(k=>{const x=$("culture_"+k);const v=x?+x.value:3;return `<span class="culture-chip"><b>${cultureLabels[k]}</b><em>${cultureReading(k,v)}</em></span>`}).join("")}
+function bindCultureControls(){$("cultureControls").querySelectorAll('input[type="range"]').forEach(x=>{const key=x.id.replace("culture_","");const refresh=()=>{const row=x.closest(".culture-range");row.querySelector("output").value=x.value;row.querySelector(".culture-range-reading").textContent=`${x.value} · ${cultureReading(key,x.value)}`;updateCultureSummary()};x.oninput=refresh;refresh()})}
+function render(d,resetCulture,overrides={}){hide("emptySec");state.candidates=d.candidates||{};if(resetCulture||!state.cultureReady){const p=d.culture.profile||{};$("cultureControls").innerHTML=Object.keys(cultureLabels).map(k=>{const v=Number.isInteger(overrides[k])?overrides[k]:levelNumber(p[k]);return `<div class="culture-range"><div class="culture-range-head"><span class="culture-range-title">${cultureLabels[k]}</span><span class="culture-range-reading">${v} · ${cultureReading(k,v)}</span></div><div class="culture-range-line"><input type="range" id="culture_${k}" min="1" max="5" value="${v}"><output>${v}</output></div></div>`}).join("");bindCultureControls();state.cultureReady=true}updateCultureSummary();show("cultureSec");const detail=$("cultureDetail"),toggle=$("cultureToggle");detail.classList.add("hidden");toggle.setAttribute("aria-expanded","false");toggle.textContent="调整 8 项参数";const names={direct:"直接版",polite:"礼貌版",concise:"简洁版"};$("versions").innerHTML=["direct","polite","concise"].map(k=>`<div class="version ${state.selected===k?"active":""}" data-k="${k}"><b>${names[k]}</b><p>${esc(d.candidates[k])}</p></div>`).join("");$("finalBody").value=state.candidates[state.selected]||"";document.querySelectorAll(".version").forEach(x=>x.onclick=()=>{state.selected=x.dataset.k;$("finalBody").value=x.querySelector("p")?.textContent||state.candidates[state.selected]||"";$("editStatus").textContent=`已选择${names[state.selected]}。点击正文中的单词，可查看同义词并逐词替换。`;document.querySelectorAll(".version").forEach(y=>y.classList.remove("active"));x.classList.add("active");detail.classList.add("hidden");toggle.setAttribute("aria-expanded","false");toggle.textContent="调整 8 项参数"});show("versionSec");show("mailSec");const ch=d.check;$("checkBox").innerHTML=ch.status==="PASS"?`<div class="pass"><b>检查通过</b><br>${esc(ch.explanation||"未检测到明显偏移。")}</div>`:(ch.flags||[]).map(f=>`<div class="flag"><b>${esc(f.version||"")} · ${esc(f.type)}</b><br>${esc(f.detail)}</div>`).join("");show("checkSec");$("versionSec").scrollIntoView({behavior:"smooth",block:"start"})}
+$("cultureToggle").onclick=()=>{const detail=$("cultureDetail"),open=detail.classList.contains("hidden");detail.classList.toggle("hidden",!open);$("cultureToggle").setAttribute("aria-expanded",String(open));$("cultureToggle").textContent=open?"收起参数":"调整 8 项参数"};
+$("copyMail").onclick=async()=>{const body=$("finalBody").value.trim(),subject=$("mailSubject").value.trim(),to=$("mailTo").value.trim();if(!body){$("mailStatus").textContent="请先填写最终正文。";return}if(to&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(to)){$("mailStatus").textContent="收件邮箱格式不正确。";return}await navigator.clipboard.writeText(`收件人：${to||"未填写"}\n主题：${subject||"未填写"}\n\n${body}`);$("mailStatus").textContent="最终邮件已复制。"};
+$("saveDraft").onclick=async()=>{const body=$("finalBody").value.trim(),subject=$("mailSubject").value.trim(),to=$("mailTo").value.trim();if(!body||!subject||!to){$("mailStatus").textContent="请完整填写收件邮箱、主题和最终正文。";return}if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(to)){$("mailStatus").textContent="收件邮箱格式不正确。";return}$("saveDraft").disabled=true;$("mailStatus").textContent="正在安全连接 QQ 邮箱并保存草稿…";try{const r=await fetch("/api/email/draft",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({to,subject,body})}),d=await r.json();if(!d.ok)throw Error(d.error);$("mailStatus").textContent="草稿已保存。请打开 QQ 邮箱核对后手动发送。";document.dispatchEvent(new Event("draft-saved"))}catch(e){$("mailStatus").textContent="保存失败："+e.message}finally{$("saveDraft").disabled=false}};
+$("openQQ").onclick=()=>{if(!$("mailTo").value.trim()){$("mailStatus").textContent="提醒：尚未填写收件邮箱。打开后请手动补充。"}window.open("https://mail.qq.com/","_blank","noopener")};
+document.addEventListener("new-communication",()=>{state={selected:"polite",cultureReady:false,candidates:{}};window.__generatedCommunication=null;for(const id of ["message","constraint","mailTo","mailSubject","finalBody"]){$(id).value=""}for(const id of ["status","generateStatus","regenerateStatus","mailStatus","editStatus"]){$(id).textContent=""}$("versions").replaceChildren();$("checkBox").replaceChildren();$("cultureControls").replaceChildren();for(const id of ["confirmSec","cultureSec","versionSec","checkSec","mailSec"]){hide(id)}$("meaningAccepted").checked=false;$("meaningStatus").textContent="";$("cultureDetail").classList.add("hidden");$("cultureToggle").setAttribute("aria-expanded","false");$("cultureToggle").textContent="调整 8 项参数"});
+const subjectWatcher=setInterval(()=>{if(state.candidates.subject&&!$("mailSubject").value)$("mailSubject").value=state.candidates.subject},500);</script></body></html>
